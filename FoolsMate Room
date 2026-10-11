@@ -1,0 +1,32 @@
+- Platform: TyrHackMe
+-Difficulty: easy
+- What i learnt: easy
+
+# steps taken for completion
+Opened the Attack Machine and launchd the Lab Machine.
+AFter the Attack machine opened i checked the website and entered a chess game where its mate in One
+Its Rook A1 to A8 but the issue is if that move is played we get a warning stating that says that it'll shutdown the computer if i do that.
+Since this happened with no delay i thought it might be a rule in the server and tried inspecting the code and found the code making the rule popup but
+i couldn't manage to remove the rule completely... Its still a black screen preventing me from playing the move so i checked BurpSuite 
+The main problem with it was when i enter the IP of the Lab Machine i get blocked and the IP keeps getting requested but the SYN-ACK doesnt come through 
+I noticed this only happens when i turn the intercept on and type the IP so, i turned off the interception and then opened the website... it loaded and then i turned the intercept mode
+Then when i move the rook it still shows the alert message so i made a randm move and Burp captured the move...
+I sent it to the repeater and then noticed that i had to change the values from and to in the code
+For example if i did from f3 to f4 i had a piece move from f3 to f4 so i thought it may work with the rook too so i did it 
+After scrolling down in the response tab i found the flag for the room
+
+
+
+
+# what i learned
+I learnt how to look at a website not only from the front but look at the backend work 
+Also learnt how Burpsuite can capture requests and exploit the website from server side 
+Learnt that this room applies restrictions only to the client side and not the server side
+
+# notes
+anything you want to remember 
+
+When intercept is on in BurpSuite it freezes the connection deliberately so first open the browser and load the Ip 
+Only then you turn the intercept on so you can capture requests... if they dont show up... just click buttons and check for vulnerabilities in BurpSuite
+
+Thank You
